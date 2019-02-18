@@ -1,8 +1,9 @@
+import getpass
 import pickle
 
 def get_credentials():
     username = input("Enter username:")
-    password = input("Enter password:")
+    password = getpass.getpass("Enter password:")
     return (username, password)
 
 def authenticate(username, password, pwdb):
