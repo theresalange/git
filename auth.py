@@ -9,7 +9,7 @@ def pwhash(password):
 
 def get_credentials():
     username = input("Enter username:")
-    password = getpass.getpass("Enter password:")
+    password = pwhash(getpass.getpass("Enter password:"))
     return (username, password)
 
 def authenticate(username, password, pwdb):
