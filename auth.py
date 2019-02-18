@@ -1,9 +1,15 @@
 import getpass
 import pickle
 
+def hash_pwd(password):
+    hashpwd = 0
+    for char in password:
+        hashpwd += ord(char)
+    return hashpwd
+
 def get_credentials():
     username = input("Enter username:")
-    password = getpass.getpass("Enter password:")
+    password = hash_pwd(getpass.getpass("Enter password:"))
     return (username, password)
 
 def authenticate(username, password, pwdb):
